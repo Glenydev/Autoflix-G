@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AutoFix</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>AutoFix</h1>
+
+    <span id="usuarioLogado">
+        Usuário: Administrador
+    </span>
+
+    <button onclick="sair()">
+        Sair
+    </button>
+
+</header>
+
+
+<nav>
+
+    <button onclick="mostrar('dashboard')">
+        Dashboard
+    </button>
+
+    <button onclick="mostrar('clientes')">
+        Clientes
+    </button>
+
+    <button onclick="mostrar('veiculos')">
+        Veículos
+    </button>
+
+    <button onclick="mostrar('ordens')">
+        Ordens de Serviço
+    </button>
+
+</nav>
+
+
+<main>
+
+
+    <!-- DASHBOARD -->
+
+    <section id="dashboard">
+
+        <h2>Dashboard</h2>
+
+        <div class="cards">
+
+            <div>
+                Clientes
+                <b id="totalClientes">0</b>
+            </div>
+
+            <div>
+                Veículos
+                <b id="totalVeiculos">0</b>
+            </div>
+
+            <div>
+                Ordens
+                <b id="totalOS">0</b>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CLIENTES -->
+
+    <section id="clientes" class="oculto">
+
+        <h2>Clientes</h2>
+
+        <input
+            id="nome"
+            placeholder="Nome"
+        >
+
+        <input
+            id="cpf"
+            placeholder="CPF"
+        >
+
+        <input
+            id="telefone"
+            placeholder="Telefone"
+        >
+
+        <input
+            id="email"
+            placeholder="E-mail"
+        >
+
+        <br>
+
+        <button onclick="adicionarCliente()">
+            Cadastrar Cliente
+        </button>
+
+        <br>
+
+        <input
+            id="busca"
+            placeholder="Buscar cliente"
+            oninput="carregarClientes()"
+        >
+
+        <ul id="listaClientes"></ul>
+
+    </section>
+
+
+    <!-- VEÍCULOS -->
+
+    <section id="veiculos" class="oculto">
+
+        <h2>Veículos</h2>
+
+        <input
+            id="placa"
+            placeholder="Placa"
+        >
+
+        <input
+            id="marca"
+            placeholder="Marca"
+        >
+
+        <input
+            id="modelo"
+            placeholder="Modelo"
+        >
+
+        <input
+            id="ano"
+            placeholder="Ano"
+        >
+
+        <select id="clienteVeiculo">
+
+            <option value="">
+                Selecione o cliente
+            </option>
+
+        </select>
+
+        <br>
+
+        <button onclick="adicionarVeiculo()">
+            Cadastrar Veículo
+        </button>
+
+        <ul id="listaVeiculos"></ul>
+
+    </section>
+
+
+    <!-- ORDENS DE SERVIÇO -->
+
+    <section id="ordens" class="oculto">
+
+        <h2>Ordens de Serviço</h2>
+
+        <select
+            id="clienteOS"
+            onchange="carregarVeiculosOS()"
+        >
+
+            <option value="">
+                Selecione o cliente
+            </option>
+
+        </select>
+
+
+        <select id="veiculoOS">
+
+            <option value="">
+                Selecione o veículo
+            </option>
+
+        </select>
+
+
+        <input
+            id="servico"
+            placeholder="Serviço"
+        >
+
+
+        <input
+            id="valor"
+            type="number"
+            placeholder="Valor"
+        >
+
+
+        <input
+            id="dataOS"
+            type="date"
+        >
+
+
+        <select id="status">
+
+            <option value="Aberta">
+                Aberta
+            </option>
+
+            <option value="Em andamento">
+                Em andamento
+            </option>
+
+            <option value="Concluída">
+                Concluída
+            </option>
+
+        </select>
+
+
+        <br>
+
+        <button onclick="adicionarOS()">
+            Cadastrar Ordem
+        </button>
+
+
+        <ul id="listaOS"></ul>
+
+    </section>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,472 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f3f3f3;
+
+    color: #333;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #eeeeee,
+        #f8d4d4
+    );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.caixa {
+    width: 350px;
+
+    padding: 35px;
+
+    background-color: white;
+
+    text-align: center;
+
+    border-radius: 8px;
+
+    border-top: 5px solid #d32f2f;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.15);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.caixa h1 {
+    margin-bottom: 5px;
+
+    color: #222;
+
+    font-size: 30px;
+}
+
+.caixa h1::after {
+    content: " 🔧";
+
+    color: #d32f2f;
+}
+
+.caixa p {
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+.caixa input {
+    width: 100%;
+
+    height: 42px;
+
+    margin-bottom: 12px;
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    outline: none;
+}
+
+.caixa input:focus {
+    border-color: #d32f2f;
+}
+
+.caixa button {
+    width: 100%;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background-color: #d32f2f;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.caixa button:hover {
+    background-color: #b71c1c;
+}
+
+#erro {
+    color: #d32f2f !important;
+
+    font-size: 13px;
+
+    margin-top: 12px;
+}
+
+
+/* CARRO DO LOGIN */
+
+.login::after {
+    content: "🚗";
+
+    position: absolute;
+
+    left: -50px;
+
+    bottom: 20px;
+
+    font-size: 30px;
+
+    animation: carro 8s linear infinite;
+}
+
+@keyframes carro {
+
+    from {
+        left: -50px;
+    }
+
+    to {
+        left: 105%;
+    }
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    min-height: 65px;
+
+    background-color: #222;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border-bottom: 4px solid #d32f2f;
+}
+
+header h1 {
+    margin: 0;
+
+    font-size: 25px;
+}
+
+header h1::after {
+    content: " 🔧";
+}
+
+header span {
+    margin-left: auto;
+
+    color: #ddd;
+
+    font-size: 14px;
+}
+
+header button {
+    border: none;
+
+    background-color: #d32f2f;
+
+    color: white;
+
+    padding: 9px 16px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #b71c1c;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+nav {
+    background-color: white;
+
+    padding: 12px 25px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+nav button {
+    border: none;
+
+    background-color: #eeeeee;
+
+    color: #333;
+
+    padding: 10px 15px;
+
+    margin-right: 5px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #d32f2f;
+
+    color: white;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+main {
+    padding: 30px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+section {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 7px;
+
+    border-left: 4px solid #d32f2f;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    color: #d32f2f;
+}
+
+.oculto {
+    display: none;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.cards div {
+    width: 180px;
+
+    min-height: 100px;
+
+    padding: 20px;
+
+    background-color: #d32f2f;
+
+    color: white;
+
+    text-align: center;
+
+    border-radius: 6px;
+
+    transition: 0.2s;
+}
+
+.cards div:hover {
+    background-color: #b71c1c;
+
+    transform: translateY(-2px);
+}
+
+.cards b {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+input,
+select {
+    width: 100%;
+
+    max-width: 350px;
+
+    height: 40px;
+
+    padding: 8px 10px;
+
+    margin: 5px 5px 10px 0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    background-color: white;
+
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #d32f2f;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+section button {
+    border: none;
+
+    background-color: #d32f2f;
+
+    color: white;
+
+    padding: 10px 16px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    margin-bottom: 15px;
+}
+
+section button:hover {
+    background-color: #b71c1c;
+}
+
+
+/* =========================
+   LISTAS
+========================= */
+
+ul {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 15px 0 0;
+}
+
+li {
+    background-color: #fafafa;
+
+    border: 1px solid #ddd;
+
+    border-left: 4px solid #d32f2f;
+
+    padding: 12px;
+
+    margin-bottom: 8px;
+
+    border-radius: 4px;
+
+    overflow: hidden;
+}
+
+li button {
+    float: right;
+
+    margin: 0 0 0 5px;
+
+    padding: 6px 10px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 650px) {
+
+    header {
+        flex-wrap: wrap;
+
+        padding: 15px;
+    }
+
+    header span {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav button {
+        margin-bottom: 5px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .cards div {
+        width: 100%;
+    }
+
+    input,
+    select {
+        max-width: 100%;
+    }
+
+    .caixa {
+        width: 90%;
+    }
+}
